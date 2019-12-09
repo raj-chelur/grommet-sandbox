@@ -15,7 +15,7 @@ import SandboxComponent from "../SandboxComponent";
 
 export default () => (
   <SandboxComponent pad="none">
-    <Box fill={true} align="center" justify="center">
+    <Box fill={true} align="center" justify="center" width="large">
       <Layer position="center" modal={true}>
         <Grid
           areas={[["header"], ["content"], ["footer"]]}
@@ -23,7 +23,7 @@ export default () => (
           rows={["xsmall", "medium", "xxsmall"]}
           gap="small"
         >
-          <Box gridArea="header" background="neutral-3" pad="large">
+          <Box gridArea="header" background="neutral-3" pad="none">
             <Heading>My Form</Heading>
           </Box>
           <Box
@@ -34,6 +34,7 @@ export default () => (
           >
             <Form onSubmit={({ value }) => console.log("Submit: ", value)}>
               <FormField name="name" label="Name" required={true} />
+              <FormField name="address" label="Address" required={true} />
               <FormField
                 label="Continent"
                 name="select"
